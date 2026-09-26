@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raja Sahib Ji Digital Seva Kender</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header class="brand">
+    <div><h1>RAJA SAHIB JI</h1><p>DIGITAL SEVA KENDER, SALOH</p></div>
+    <span class="badge">PRINT SERVICE</span>
+  </header>
+
+  <section id="languageScreen" class="screen">
+    <h2>Select Language</h2>
+    <p class="muted">ਭਾਸ਼ਾ ਚੁਣੋ / भाषा चुनें / Choose language</p>
+    <div class="language-grid">
+      <button data-lang="pa">ਪੰਜਾਬੀ</button>
+      <button data-lang="hi">हिन्दी</button>
+      <button data-lang="en">English</button>
+    </div>
+  </section>
+
+  <section id="orderScreen" class="screen hidden">
+    <div class="step">1. Document</div>
+    <div class="doc-grid">
+      <button class="doc" data-doc="Aadhaar Card">Aadhaar Card</button>
+      <button class="doc" data-doc="Voter Card">Voter Card</button>
+      <button class="doc" data-doc="PAN Card">PAN Card</button>
+      <button class="doc" data-doc="Passport">Passport</button>
+      <button class="doc" data-doc="Other">Other ID / Document</button>
+    </div>
+
+    <div class="step">2. Upload & Preview</div>
+    <label class="upload">Choose PDF / JPG / PNG
+      <input id="fileInput" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple>
+    </label>
+    <div id="preview" class="preview"><span>No file selected</span></div>
+
+    <div class="step">3. Print Settings</div>
+    <div class="settings">
+      <label>Print type<select id="printType"><option value="bw">Black & White</option><option value="color">Colour</option></select></label>
+      <label>Layout<select id="layout">
+        <option value="single">1 page → 1 side</option>
+        <option value="front">Front Side</option>
+        <option value="back">Back Side</option>
+        <option value="duplex">Front + Back (2 sides)</option>
+        <option value="multiple">Multiple Pages</option>
+      </select></label>
+      <label>Copies<input id="copies" type="number" min="1" value="1"></label>
+    </div>
+    <div class="notice">Aadhaar Front + Back: both sides can be printed on 1 A4 sheet. Pricing is based on actual A4 sheets.</div>
+
+    <div class="summary">
+      <div><span>A4 sheets</span><strong id="sheets">0</strong></div>
+      <div><span>Total</span><strong id="total">₹0</strong></div>
+    </div>
+
+    <div class="payment">
+      <label><input type="radio" name="payment" value="online" checked> Online</label>
+      <label><input type="radio" name="payment" value="cash"> Cash</label>
+    </div>
+    <button id="submit" class="submit">Submit Print Request</button>
+    <p id="request" class="request"></p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
